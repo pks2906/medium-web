@@ -10,22 +10,20 @@ const app = new Hono<{
   };
 }>();
 
-app.use('/api/v1/blog/*', async (c, next) => {
-
+app.use("/api/v1/blog/*", async (c, next) => {
   const header = c.req.header("authorization") || "";
 
   // Bearer token
-  const token = header.split(" ")[1]
+  const token = header.split(" ")[1];
 
-  const response = await verify(token, c.env.JWT_SECRET)
-  if (response.id){
-    next()
-  } else{
-    c.status(403)
-    return c.json({error: "unauthorized"})
+  const response = await verify(token, c.env.JWT_SECRET);
+  if (response.id) {
+    next();
+  } else {
+    c.status(403);
+    return c.json({ error: "unauthorized" });
   }
-  
-})
+});
 
 app.post("/api/v1/signup", async (c) => {
   const prisma = new PrismaClient({
@@ -39,7 +37,7 @@ app.post("/api/v1/signup", async (c) => {
       password: body.password,
     },
   });
-  
+
   const token = await sign({ id: user.id }, c.env.JWT_SECRET);
 
   return c.json({
@@ -64,7 +62,7 @@ app.post("/api/v1/signin", async (c) => {
     c.status(403);
     return c.json({ error: "user not found" });
   }
-  
+
   const jwt = await sign({ id: user.id }, c.env.JWT_SECRET);
   return c.json({ jwt });
 });
