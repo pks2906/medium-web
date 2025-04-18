@@ -2,7 +2,7 @@ import { Hono } from "hono";
 import { PrismaClient } from "@prisma/client/edge";
 import { withAccelerate } from "@prisma/extension-accelerate";
 import { sign } from "hono/jwt";
-import { sighnupInput } from "../zod";
+import { signupInput, sighninInput } from "@pkspratik/medium-common";
 
 export const userRouter = new Hono<{
   Bindings: {
@@ -13,7 +13,7 @@ export const userRouter = new Hono<{
 
 userRouter.post("/signup", async (c) => {
   const body = await c.req.json();
-  const { success } = sighnupInput.safeParse(body);
+  const { success } = signupInput.safeParse(body);
   if (!success) {
     c.status(411);
     return c.json({
@@ -38,7 +38,15 @@ userRouter.post("/signup", async (c) => {
   });
 });
 
-userRouter.post("/api/v1/signin", async (c) => {
+userRouter.post("/api/v1/user/signin", async (c) => {
+  const reqbody = await c.req.json();
+  const { success } = sighninInput.safeParse(reqbody);
+  if (!success) {
+    c.status(411);
+    return c.json({
+      message: "Input not correct",
+    });
+  }
   const prisma = new PrismaClient({
     datasourceUrl: c.env?.DATABASE_URL,
   }).$extends(withAccelerate());
