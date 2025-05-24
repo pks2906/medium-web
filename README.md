@@ -1,6 +1,6 @@
 # 📝 Blogger
 
-A full-stack blogging platform inspired by Medium. Create, read, and share blogs effortlessly. Follow your favorite authors and stay updated with the latest content.
+A full-stack blogging platform inspired by Medium. Fully dockerized for easy setup and deployment. Create, read, and share blogs effortlessly. Follow your favorite authors and stay updated with the latest content.
 
 🔗 [Check it out live!](https://blog-website-two-chi.vercel.app/)
 
@@ -39,9 +39,17 @@ A full-stack blogging platform inspired by Medium. Create, read, and share blogs
   - Tailwind CSS  
 
 - **Backend**  
-  - Hono (Edge-ready web framework)  
+  - Hono (Edge-ready web framework)
   - Prisma (ORM)  
-  - PostgreSQL  
+  - PostgreSQL
+  - Cloudflare Workers (Edge runtime)
+  - JWT (Authentication)
+  - Zod (Validation)
+
+- **Containerization & Deployment**
+  - Docker (Containerizing backend and frontend)
+  - Docker Hub (Image registry)
+
 
 ---
 
