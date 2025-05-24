@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,5 +12,8 @@
   "description": "",
   "dependencies": {
     "zod": "^3.24.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
   }
 }
