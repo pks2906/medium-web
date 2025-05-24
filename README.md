@@ -75,10 +75,49 @@ A full-stack blogging platform inspired by Medium. Create, read, and share blogs
    npm run dev
   Open your browser and visit http://localhost:3000 to start using the app.
 
+## 🐳 Running with Docker
+You can also run the backend and frontend using Docker images hosted on Docker Hub.
+
+### Prerequisites
+Docker installed on your machine
+Install Docker if not already installed.
+
+### Step 1: Pull the Docker Images
+Pull the backend image:
+```bash
+docker pull pks2906/medium-backend:latest
+```
+Pull the frontend image:
+```bash
+docker pull pks2906/medium-frontend:latest
+```
+### Step 2: Run the Backend Container
+Run the backend container and expose port 8080 (adjust port if needed):
+```bash
+docker run -d -p 8080:8080 --name medium-backend pks2906/medium-backend:latest
+```
+### Step 3: Run the Frontend Container
+Run the frontend container and expose port 3000 (adjust port if needed):
+```bash
+docker run -d -p 3000:3000 --name medium-frontend pks2906/medium-frontend:latest
+```
+### Step 4: Verify the Containers are Running
+Check running containers:
+```bash
+docker ps
+```
+You should see `` medium-backend `` and ``medium-frontend`` containers running.
+
+### Step 5: Access the Application
+Backend API is accessible at: ``http://localhost:8080``
+
+Frontend app is accessible at: ``http://localhost:3000``
+
+**If you want a ``docker-compose.yml`` file or need any further help, feel free to ask!**
+
+---
+
+Would you like me to help you create that `docker-compose.yml` too?
 
 
 
-
-
-
-  
