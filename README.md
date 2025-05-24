@@ -49,8 +49,8 @@ A full-stack blogging platform inspired by Medium. Create, read, and share blogs
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/theblog-website.git
-   cd theblog-website
+   git clone https://github.com/pks2906/medium-web
+   cd the blog-website
    
 2. **Install Dependencies**
    ```bash
