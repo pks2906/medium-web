@@ -123,9 +123,46 @@ Frontend app is accessible at: ``http://localhost:3000``
 
 **If you want a ``docker-compose.yml`` file or need any further help, feel free to ask!**
 
+Would you like me to help you create that `docker-compose.yml` too?
+
+
+## 🧱 System Architecture Overview
+
 ---
 
-Would you like me to help you create that `docker-compose.yml` too?
+                        +-------------------+
+                        |   Web Browser     |
+                        |  (User Frontend)  |
+                        +--------+----------+
+                                 |
+                                 | HTTP (port 3000)
+                                 ↓
+                 +---------------+----------------+
+                 |        Frontend (React)        |
+                 |     TypeScript + Tailwind CSS  |
+                 | Containerized via Docker       |
+                 +---------------+----------------+
+                                 |
+                                 | API Requests (REST)
+                                 ↓
+                 +---------------+----------------+
+                 |        Backend (Hono)          |
+                 |   Edge-ready, TypeScript/JS    |
+                 |   REST API + Auth (JWT)        |
+                 |   Input Validation (Zod)       |
+                 | Containerized via Docker       |
+                 +---------------+----------------+
+                                 |
+                                 | Prisma ORM
+                                 ↓
+         +-----------------------+------------------------+
+         |          PostgreSQL Database (Cloud / Local)   |
+         |  Stores users, blogs, followers, tokens, etc.  |
+         +------------------------------------------------+
+
+  [Deployment Environment: Docker + Docker Hub + Cloudflare Workers]
+
+
 
 
 
