@@ -125,6 +125,81 @@ Frontend app is accessible at: ``http://localhost:3000``
 
 Would you like me to help you create that `docker-compose.yml` too?
 
+## Project file Architecture
+
+```
+
+├── README.md
+├── backend
+    ├── .gitignore
+    ├── Dockerfile
+    ├── README.md
+    ├── package-lock.json
+    ├── package.json
+    ├── prisma
+    │   ├── migrations
+    │   │   ├── 20250418072801_init_schema
+    │   │   │   └── migration.sql
+    │   │   └── migration_lock.toml
+    │   └── schema.prisma
+    ├── src
+    │   ├── index.ts
+    │   └── routes
+    │   │   ├── blog.ts
+    │   │   └── user.ts
+    ├── tsconfig.json
+    └── wrangler.jsonc
+├── common
+    ├── .gitignore
+    ├── .npmignore
+    ├── package-lock.json
+    ├── package.json
+    ├── src
+    │   └── index.ts
+    ├── tsconfig.json
+    └── tsconfig.tsbuildinfo
+├── docker-compose.yml
+└── frontend
+    ├── .gitignore
+    ├── Dockerfile
+    ├── README.md
+    ├── index.html
+    ├── package-lock.json
+    ├── package.json
+    ├── postcss.config.js
+    ├── public
+        └── vite.svg
+    ├── src
+        ├── App.css
+        ├── App.tsx
+        ├── assets
+        │   └── react.svg
+        ├── components
+        │   ├── Appbar.tsx
+        │   ├── Auth.tsx
+        │   ├── BlogCard.tsx
+        │   ├── BlogSkeleton.tsx
+        │   ├── FullBlog.tsx
+        │   ├── Quote.tsx
+        │   └── Spinner.tsx
+        ├── config.ts
+        ├── hooks
+        │   └── index.ts
+        ├── index.css
+        ├── main.tsx
+        ├── pages
+        │   ├── Blog.tsx
+        │   ├── Blogs.tsx
+        │   ├── Publish.tsx
+        │   ├── Signin.tsx
+        │   └── Signup.tsx
+        └── vite-env.d.ts
+    ├── tailwind.config.js
+    ├── tsconfig.app.json
+    ├── tsconfig.json
+    ├── tsconfig.node.json
+    └── vite.config.ts
+```
 
 ## 🧱 System Architecture Overview
 
