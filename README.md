@@ -239,5 +239,12 @@ Would you like me to help you create that `docker-compose.yml` too?
 
 
 
+## Backend Improvements
+
+Improved documentation for the article listing API
+to clarify the structure of the response payload
+used by the frontend feed view.
+
+
 
 
