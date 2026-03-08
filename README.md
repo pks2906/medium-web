@@ -237,7 +237,10 @@ Would you like me to help you create that `docker-compose.yml` too?
 
   [Deployment Environment: Docker + Docker Hub + Cloudflare Workers]
 
+## Frontend Improvements
 
+Improved article card layout handling
+for better responsiveness across devices.
 
 ## Backend Improvements
 
